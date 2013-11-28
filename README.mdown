@@ -11,21 +11,22 @@ https://github.com/scottjehl/picturefill
 Mark up your html like this.
 
 ```html
-	<div data-picture role="img" aria-label="<%=alt%>">
-	    <span class="adapt_320" data-src='<%= et.getStaticPath(path + ".img.320.low." + extension + suffix) %>' data-media="(min-width: 1px)"></span>
-	    <span class="adapt_320" data-src='<%= et.getStaticPath(path + ".img.320.medium." + extension + suffix) %>' data-media="(min-width: 320px)"></span>
-	    <span class="adapt_480" data-src='<%= et.getStaticPath(path + ".img.480.medium." + extension + suffix) %>' data-media="(min-width: 321px)"></span>
-	    <span class="adapt_476" data-src='<%= et.getStaticPath(path + ".img.476.high." + extension + suffix) %>' data-media="(min-width: 321px)"></span>
-	    <span class="adapt_620" data-src='<%= et.getStaticPath(path + ".img.620.high." + extension + suffix) %>' data-media="(min-width: 769px)"></span>
-	    <span class="adapt_full" data-src='<%= et.getStaticPath(path + ".img.full.high." + extension + suffix) %>' data-media="(min-width: 1025px)"></span>
+<div data-picture role="img" aria-label="alt">
+	<span class="adapt_320" data-src='img.320.low.jpg' data-media="(min-width: 1px)"></span>
+	<span class="adapt_320" data-src='img.320.medium.jpg' data-media="(min-width: 320px)"></span>
+	<span class="adapt_480" data-src='img.480.medium.jpg' data-media="(min-width: 321px)"></span>
+	<span class="adapt_476" data-src='img.476.high.jpg' data-media="(min-width: 321px)"></span>
+	<span class="adapt_620" data-src='img.620.high.jpg' data-media="(min-width: 769px)"></span>
+	<span class="adapt_full" data-src='img.full.high.jpg' data-media="(min-width: 1025px)"></span>
 
-	    <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-	    <noscript>
-	        <img src='<%= et.getStaticPath(path + ".img.320.low." + extension + suffix) %>' alt='<%= alt %>'>
-	    </noscript>
-	</div>
 	<!-- Fallback content for IE -->
 	<!--[if (lt IE 9) & (!IEMobile)]>
-	<div class="adapt_full" role="img" aria-label="<%=alt%>" style="background-image: url(<%= et.getStaticPath(path + ".img.full.high." + extension + suffix) %>)"></div>
+	<img src='img.full.high.jpg' alt='alt'>
 	<![endif]-->
+
+	<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+	<noscript>
+		<img src='img.320.low.jpg' alt='<%= alt %>'>
+	</noscript>
+</div>
 ```
