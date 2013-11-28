@@ -26,7 +26,7 @@ Mark up your html like this.
 
 	<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
 	<noscript>
-		<img src='img.320.low.jpg' alt='<%= alt %>'>
+		<img src='img.320.low.jpg' alt='alt'>
 	</noscript>
 </div>
 ```
